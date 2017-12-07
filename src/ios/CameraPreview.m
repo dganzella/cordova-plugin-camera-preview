@@ -18,7 +18,7 @@
     CGFloat width = (CGFloat)[command.arguments[2] floatValue];
     CGFloat height = (CGFloat)[command.arguments[3] floatValue];
 
-    if(cameraRenderController != nil){
+    if(self.cameraRenderController != nil){
         self.cameraRenderController.view.frame = CGRectMake(x, y, width, height);
     }
 }
