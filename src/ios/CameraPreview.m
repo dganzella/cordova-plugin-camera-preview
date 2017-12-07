@@ -12,6 +12,17 @@
   self.webView.backgroundColor = [UIColor clearColor];
 }
 
+-(void) updateView:(CDVInvokedUrlCommand*)command {
+    CGFloat x = (CGFloat)[command.arguments[0] floatValue] + self.webView.frame.origin.x;
+    CGFloat y = (CGFloat)[command.arguments[1] floatValue] + self.webView.frame.origin.y;
+    CGFloat width = (CGFloat)[command.arguments[2] floatValue];
+    CGFloat height = (CGFloat)[command.arguments[3] floatValue];
+
+    if(cameraRenderController != nil){
+        self.cameraRenderController.view.frame = CGRectMake(x, y, width, height);
+    }
+}
+
 - (void) startCamera:(CDVInvokedUrlCommand*)command {
 
   CDVPluginResult *pluginResult;

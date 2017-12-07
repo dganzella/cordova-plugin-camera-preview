@@ -7,6 +7,7 @@
 
 @interface CameraPreview : CDVPlugin <TakePictureDelegate, FocusDelegate>
 
+- (void) updateView:(CDVInvokedUrlCommand*)command;
 - (void) startCamera:(CDVInvokedUrlCommand*)command;
 - (void) stopCamera:(CDVInvokedUrlCommand*)command;
 - (void) showCamera:(CDVInvokedUrlCommand*)command;
